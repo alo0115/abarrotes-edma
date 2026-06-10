@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EDMA - Bebidas y Jugos</title>
+    <link rel="stylesheet" href="estilos.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+
+    <header class="main-header">
+        <div class="header-container">
+            
+            <div class="logo">
+                <a href="index.html" style="text-decoration:none; color:inherit;">
+                    <h1><i class="fas fa-store"></i> EDMA</h1>
+                </a>
+            </div>
+            
+            <div class="search-box">
+                <input type="text" placeholder="Buscar bebidas en la tiendita...">
+                <button type="submit"><i class="fas fa-search"></i></button>
+            </div>
+
+            <div class="header-actions">
+                <a href="https://wa.me/528111752323" target="_blank" class="btn-contacto-header">
+                    <i class="fab fa-whatsapp"></i> Pedir por Chat
+                </a>
+            </div>
+            
+        </div>
+    </header>
+
+    <nav class="navbar">
+        <div class="nav-links">
+            <a href="index.html">Inicio</a>
+            <a href="index.html#catalogo" class="active">Catálogo</a>
+            <a href="index.html#contacto">Contacto</a>
+        </div>
+    </nav>
+
+    <div class="container" style="margin-top: 2rem;">
+        
+        <div class="categoria-header">
+            <h2 class="categoria-titulo"><a href="index.html" style="color:#7f8c8d; text-decoration:none;">Catálogo</a> / Bebidas y Jugos</h2>
+            <a href="index.html" class="ver-mas-link"><i class="fas fa-arrow-left"></i> Volver al Inicio</a>
+        </div>
+        
+        <div class="grid-productos">
+            
+            <div class="producto-card">
+                <div class="img-container">
+                    <img src="https://images.unsplash.com/photo-1621506289937-a8e4df240d0b?w=500" alt="Jugo de Naranja" class="producto-img">
+                </div>
+                <div class="producto-nombre">Jugo de Naranja Natural 1L</div>
+                <div class="producto-precio">$35.00</div>
+                <div class="detalles-compra">
+                    <label>Cant:</label>
+                    <input type="number" class="producto-cantidad" value="1" min="1" max="20">
+                </div>
+                <a href="#" class="btn-pedido">
+                    <i class="fas fa-shopping-basket"></i> Pedir producto
+                </a>
+            </div>
+
+            <div class="producto-card">
+                <div class="img-container">
+                    <img src="https://images.unsplash.com/photo-1622483767028-3f66f32aef97?w=500" alt="Refresco de Cola" class="producto-img">
+                </div>
+                <div class="producto-nombre">Refresco de Cola 2.5L</div>
+                <div class="producto-precio">$38.00</div>
+                <div class="detalles-compra">
+                    <label>Cant:</label>
+                    <input type="number" class="producto-cantidad" value="1" min="1" max="20">
+                </div>
+                <a href="#" class="btn-pedido">
+                    <i class="fas fa-shopping-basket"></i> Pedir producto
+                </a>
+            </div>
+
+            <div class="producto-card">
+                <div class="img-container">
+                    <img src="https://images.unsplash.com/photo-1608885898957-a599fb1698d6?w=500" alt="Agua Mineral" class="producto-img">
+                </div>
+                <div class="producto-nombre">Agua Mineral 600ml</div>
+                <div class="producto-precio">$16.00</div>
+                <div class="detalles-compra">
+                    <label>Cant:</label>
+                    <input type="number" class="producto-cantidad" value="1" min="1" max="20">
+                </div>
+                <a href="#" class="btn-pedido">
+                    <i class="fas fa-shopping-basket"></i> Pedir producto
+                </a>
+            </div>
+
+            <div class="producto-card">
+                <div class="img-container">
+                    <img src="https://images.unsplash.com/photo-1556679343-c7306c1976bc?w=500" alt="Té Frío Limón" class="producto-img">
+                </div>
+                <div class="producto-nombre">Té Negro sabor Limón 1L</div>
+                <div class="producto-precio">$26.00</div>
+                <div class="detalles-compra">
+                    <label>Cant:</label>
+                    <input type="number" class="producto-cantidad" value="1" min="1" max="20">
+                </div>
+                <a href="#" class="btn-pedido">
+                    <i class="fas fa-shopping-basket"></i> Pedir producto
+                </a>
+            </div>
+
+        </div> 
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

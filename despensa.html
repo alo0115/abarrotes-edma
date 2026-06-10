@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EDMA - Lácteos y Despensa</title>
+    <link rel="stylesheet" href="estilos.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+
+    <header class="main-header">
+        <div class="header-container">
+            
+            <div class="logo">
+                <a href="index.html" style="text-decoration:none; color:inherit;">
+                    <h1><i class="fas fa-store"></i> EDMA</h1>
+                </a>
+            </div>
+            
+            <div class="search-box">
+                <input type="text" placeholder="Buscar productos en la tiendita...">
+                <button type="submit"><i class="fas fa-search"></i></button>
+            </div>
+
+            <div class="header-actions">
+                <a href="https://wa.me/528111752323" target="_blank" class="btn-contacto-header">
+                    <i class="fab fa-whatsapp"></i> Pedir por Chat
+                </a>
+            </div>
+            
+        </div>
+    </header>
+
+    <nav class="navbar">
+        <div class="nav-links">
+            <a href="index.html">Inicio</a>
+            <a href="index.html#catalogo" class="active">Catálogo</a>
+            <a href="index.html#contacto">Contacto</a>
+        </div>
+    </nav>
+
+    <div class="container" style="margin-top: 2rem;">
+        
+        <div class="categoria-header">
+            <h2 class="categoria-titulo"><a href="index.html" style="color:#7f8c8d; text-decoration:none;">Catálogo</a> / Lácteos y Despensa</h2>
+            <a href="index.html" class="ver-mas-link"><i class="fas fa-arrow-left"></i> Volver al Inicio</a>
+        </div>
+        
+        <div class="grid-productos">
+            
+            <div class="producto-card">
+                <div class="img-container">
+                    <img src="https://images.unsplash.com/photo-1550583724-b2692b85b150?w=500&auto=format&fit=crop&q=60" alt="Leche Entera" class="producto-img">
+                </div>
+                <div class="producto-nombre">Leche Entera 1L</div>
+                <div class="producto-precio">$24.00</div>
+                <div class="detalles-compra">
+                    <label>Cant:</label>
+                    <input type="number" class="producto-cantidad" value="1" min="1" max="20">
+                </div>
+                <a href="#" class="btn-pedido">
+                    <i class="fas fa-shopping-basket"></i> Pedir producto
+                </a>
+            </div>
+
+            <div class="producto-card">
+                <div class="img-container">
+                    <img src="https://images.unsplash.com/photo-1586201375761-83865001e31c?w=500" alt="Arroz" class="producto-img">
+                </div>
+                <div class="producto-nombre">Arroz Integral 1kg</div>
+                <div class="producto-precio">$32.00</div>
+                <div class="detalles-compra">
+                    <label>Cant:</label>
+                    <input type="number" class="producto-cantidad" value="1" min="1" max="20">
+                </div>
+                <a href="#" class="btn-pedido">
+                    <i class="fas fa-shopping-basket"></i> Pedir producto
+                </a>
+            </div>
+
+        </div> 
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

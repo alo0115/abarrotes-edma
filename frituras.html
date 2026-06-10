@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EDMA - Frituras y Snacks</title>
+    <link rel="stylesheet" href="estilos.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+
+    <!-- ================= CABECERA CORREGIDA ================= -->
+    <header class="main-header">
+        <div class="header-container">
+            <div class="logo">
+                <a href="index.html" style="text-decoration:none; color:inherit;">
+                    <h1><i class="fas fa-store"></i> EDMA</h1>
+                </a>
+            </div>
+            
+            <div class="search-box">
+                <input type="text" placeholder="Buscar botanas en la tiendita...">
+                <button type="submit"><i class="fas fa-search"></i></button>
+            </div>
+
+            <div class="header-actions">
+                <a href="https://wa.me/528111752323" target="_blank" class="btn-contacto-header">
+                    <i class="fab fa-whatsapp"></i> Pedir por Chat
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <!-- MENÚ DE NAVEGACIÓN -->
+    <nav class="navbar">
+        <div class="nav-links">
+            <a href="index.html">Inicio</a>
+            <a href="index.html#catalogo" class="active">Catálogo</a>
+            <a href="index.html#contacto">Contacto</a>
+        </div>
+    </nav>
+
+    <!-- ================= CONTENIDO DE LA CATEGORÍA ================= -->
+    <div class="container" style="margin-top: 2rem;">
+        
+        <div class="categoria-header">
+            <h2 class="categoria-titulo"><a href="index.html" style="color:#7f8c8d; text-decoration:none;">Catálogo</a> / Frituras y Snacks</h2>
+            <a href="index.html" class="ver-mas-link"><i class="fas fa-arrow-left"></i> Volver al Inicio</a>
+        </div>
+        
+        <div class="grid-productos">
+            
+            <!-- Producto 1 -->
+            <div class="producto-card">
+                <div class="img-container">
+                    <img src="https://images.unsplash.com/photo-1599490659213-e2b9527bb087?w=500" alt="Papas Fritas" class="producto-img">
+                </div>
+                <div class="producto-nombre">Papas Fritas Saladas Grandes</div>
+                <div class="producto-precio">$45.00</div>
+                <div class="detalles-compra">
+                    <label>Cant:</label>
+                    <input type="number" class="producto-cantidad" value="1" min="1" max="20">
+                </div>
+                <a href="#" class="btn-pedido">
+                    <i class="fas fa-shopping-basket"></i> Pedir producto
+                </a>
+            </div>
+
+            <!-- Producto 2 -->
+            <div class="producto-card">
+                <div class="img-container">
+                    <img src="https://images.unsplash.com/photo-1518047601542-79f18c655718?w=500" alt="Nachos" class="producto-img">
+                </div>
+                <div class="producto-nombre">Totopos de Maíz Queso</div>
+                <div class="producto-precio">$38.00</div>
+                <div class="detalles-compra">
+                    <label>Cant:</label>
+                    <input type="number" class="producto-cantidad" value="1" min="1" max="20">
+                </div>
+                <a href="#" class="btn-pedido">
+                    <i class="fas fa-shopping-basket"></i> Pedir producto
+                </a>
+            </div>
+
+            <!-- Producto 3 -->
+            <div class="producto-card">
+                <div class="img-container">
+                    <img src="https://images.unsplash.com/photo-1534113414509-0eec2bfb493f?w=500" alt="Palomitas" class="producto-img">
+                </div>
+                <div class="producto-nombre">Palomitas de Mantequilla Act II</div>
+                <div class="producto-precio">$18.00</div>
+                <div class="detalles-compra">
+                    <label>Cant:</label>
+                    <input type="number" class="producto-cantidad" value="1" min="1" max="20">
+                </div>
+                <a href="#" class="btn-pedido">
+                    <i class="fas fa-shopping-basket"></i> Pedir producto
+                </a>
+            </div>
+
+            <!-- Producto 4 -->
+            <div class="producto-card">
+                <div class="img-container">
+                    <img src="https://images.unsplash.com/photo-1600952841320-db92ec4047ca?w=500" alt="Cacahuates" class="producto-img">
+                </div>
+                <div class="producto-nombre">Cacahuates Enchilados 200g</div>
+                <div class="producto-precio">$22.00</div>
+                <div class="detalles-compra">
+                    <label>Cant:</label>
+                    <input type="number" class="producto-cantidad" value="1" min="1" max="20">
+                </div>
+                <a href="#" class="btn-pedido">
+                    <i class="fas fa-shopping-basket"></i> Pedir producto
+                </a>
+            </div>
+
+        </div> 
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,315 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Catálogo - Abarrotes EDMA</title>
+    <!-- Cargamos iconos modernos de FontAwesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Enlace al archivo de estilos externo -->
+    <link rel="stylesheet" href="estilos.css">
+</head>
+<body>
+
+    <!-- ================= PARTE DE ARRIBA ================= -->
+    <div class="top-bar">
+        <div class="top-bar-info">
+            <span><i class="fas fa-clock"></i> Abierto todos los días</span>
+        </div>
+    </div>
+
+    <header class="main-header">
+        <div class="logo">
+            <h1><i class="fas fa-store"></i> EDMA</h1>
+        </div>
+        
+        <!-- Barra de búsqueda -->
+        <div class="search-box">
+            <input type="text" placeholder="Buscar productos en la tiendita...">
+            <button><i class="fas fa-search"></i></button>
+        </div>
+    </header>
+
+    <nav class="navbar">
+        <div class="nav-links">
+            <a href="index.html" class="active">Inicio</a>
+            <a href="#catalogo">Catálogo</a>
+            <a href="#contacto">Contacto</a>
+        </div>
+    </nav>
+
+    <!-- Botón Flotante Global de WhatsApp -->
+    <a href="https://wa.me/8111752323?text=Hola,%20quiero%20hacer%20un%20pedido." class="whatsapp-float" target="_blank">
+        <i class="fab fa-whatsapp"></i>
+    </a>
+
+    <!-- ================= CUERPO DEL CATÁLOGO ================= -->
+    <div class="container" id="catalogo" style="margin-top: 2rem;">
+        
+        <!-- ================= SECCIÓN 1: LÁCTEOS Y DESPENSA ================= -->
+        <div class="categoria-header">
+            <h2 class="categoria-titulo">Lácteos y Despensa</h2>
+            <a href="despensa.html" class="ver-mas-link">Ver más <i class="fas fa-chevron-right"></i></a>
+        </div>
+        
+        <!-- Productos de Lácteos -->
+        <div class="grid-productos">
+            
+            <div class="producto-card">
+                <div class="img-container">
+                    <img src="https://images.unsplash.com/photo-1550583724-b2692b85b150?w=500&auto=format&fit=crop&q=60" alt="Leche Entera" class="producto-img">
+                </div>
+                <div class="producto-nombre">Leche Entera 1L</div>
+                <div class="producto-precio">$24.00</div>
+                <div class="detalles-compra">
+                    <label>Cant:</label>
+                    <input type="number" class="producto-cantidad" value="1" min="1" max="20">
+                </div>
+                <a href="#" class="btn-pedido">
+                    <i class="fas fa-shopping-basket"></i> Pedir producto
+                </a>
+            </div>
+
+            <div class="producto-card">
+                <div class="img-container">
+                    <img src="https://images.unsplash.com/photo-1586201375761-83865001e31c?w=500" alt="Arroz" class="producto-img">
+                </div>
+                <div class="producto-nombre">Arroz Integral 1kg</div>
+                <div class="producto-precio">$32.00</div>
+                <div class="detalles-compra">
+                    <label>Cant:</label>
+                    <input type="number" class="producto-cantidad" value="1" min="1" max="20">
+                </div>
+                <a href="#" class="btn-pedido">
+                    <i class="fas fa-shopping-basket"></i> Pedir producto
+                </a>
+            </div>
+
+            <div class="producto-card">
+                <div class="img-container">
+                    <img src="https://images.unsplash.com/photo-1506976785307-8732e854ad03?w=500&auto=format&fit=crop&q=60" alt="Producto" class="producto-img">
+                </div>
+                <div class="producto-nombre">Huevo Blanco Cono 30 pz</div>
+                <div class="producto-precio">$90.00</div>
+                <div class="detalles-compra">
+                    <label>Cant:</label>
+                    <input type="number" class="producto-cantidad" value="1" min="1" max="20">
+                </div>
+                <a href="#" class="btn-pedido">
+                    <i class="fas fa-shopping-basket"></i> Pedir producto
+                </a>
+            </div>
+
+            <div class="producto-card">
+                <div class="img-container">
+                    <img src="https://images.unsplash.com/photo-1551462147-ff29053bfc14?w=500&auto=format&fit=crop&q=60" alt="Producto" class="producto-img">
+                </div>
+                <div class="producto-nombre">Frijol Negro 1kg</div>
+                <div class="producto-precio">$35.00</div>
+                <div class="detalles-compra">
+                    <label>Cant:</label>
+                    <input type="number" class="producto-cantidad" value="1" min="1" max="20">
+                </div>
+                <a href="#" class="btn-pedido">
+                    <i class="fas fa-shopping-basket"></i> Pedir producto
+                </a>
+            </div>
+
+        </div> <!-- Cierre del grid de productos de Lácteos -->
+
+
+        <!-- ================= SECCIÓN 2: BEBIDAS Y JUGOS ================= -->
+        <div class="categoria-header" style="margin-top: 3.5rem;">
+            <h2 class="categoria-titulo">Bebidas y Jugos</h2>
+            <a href="bebidas.html" class="ver-mas-link">Ver más <i class="fas fa-chevron-right"></i></a>
+        </div>
+
+        <!-- Bloque de tus productos rápidos de Bebidas en el Inicio -->
+        <div class="grid-productos">
+            
+            <div class="producto-card">
+                <div class="img-container">
+                    <img src="https://images.unsplash.com/photo-1621506289937-a8e4df240d0b?w=500" alt="Jugo" class="producto-img">
+                </div>
+                <div class="producto-nombre">Jugo de Naranja 1L</div>
+                <div class="producto-precio">$35.00</div>
+                <div class="detalles-compra">
+                    <label>Cant:</label>
+                    <input type="number" class="producto-cantidad" value="1" min="1" max="20">
+                </div>
+                <a href="#" class="btn-pedido">
+                    <i class="fas fa-shopping-basket"></i> Pedir producto
+                </a>
+            </div>
+
+            <div class="producto-card">
+                <div class="img-container">
+                    <img src="https://images.unsplash.com/photo-1622483767028-3f66f32aef97?w=500" alt="Refresco" class="producto-img">
+                </div>
+                <div class="producto-nombre">Refresco de Cola 2.5L</div>
+                <div class="producto-precio">$38.00</div>
+                <div class="detalles-compra">
+                    <label>Cant:</label>
+                    <input type="number" class="producto-cantidad" value="1" min="1" max="20">
+                </div>
+                <a href="#" class="btn-pedido">
+                    <i class="fas fa-shopping-basket"></i> Pedir producto
+                </a>
+            </div>
+
+            <div class="producto-card">
+                <div class="img-container">
+                    <img src="https://images.unsplash.com/photo-1608885898957-a599fb1698d6?w=500" alt="Agua" class="producto-img">
+                </div>
+                <div class="producto-nombre">Agua Mineral 600ml</div>
+                <div class="producto-precio">$16.00</div>
+                <div class="detalles-compra">
+                    <label>Cant:</label>
+                    <input type="number" class="producto-cantidad" value="1" min="1" max="20">
+                </div>
+                <a href="#" class="btn-pedido">
+                    <i class="fas fa-shopping-basket"></i> Pedir producto
+                </a>
+            </div>
+
+            <div class="producto-card">
+                <div class="img-container">
+                    <img src="https://images.unsplash.com/photo-1556679343-c7306c1976bc?w=500" alt="Té" class="producto-img">
+                </div>
+                <div class="producto-nombre">Té Frío Limón 1L</div>
+                <div class="producto-precio">$26.00</div>
+                <div class="detalles-compra">
+                    <label>Cant:</label>
+                    <input type="number" class="producto-cantidad" value="1" min="1" max="20">
+                </div>
+                <a href="#" class="btn-pedido">
+                    <i class="fas fa-shopping-basket"></i> Pedir producto
+                </a>
+            </div>
+
+        </div> <!-- Cierre del grid de productos de Bebidas -->
+        <!-- ================= SECCIÓN 3: FRITURAS Y SNACKS ================= -->
+        <div class="categoria-header" style="margin-top: 3.5rem;">
+            <h2 class="categoria-titulo">Frituras y Snacks</h2>
+            <!-- Este enlace manda a tu nueva página de frituras -->
+            <a href="frituras.html" class="ver-mas-link">Ver más <i class="fas fa-chevron-right"></i></a>
+        </div>
+
+        <div class="grid-productos">
+            
+            <div class="producto-card">
+                <div class="img-container">
+                    <img src="https://images.unsplash.com/photo-1599490659213-e2b9527bb087?w=500" alt="Papas" class="producto-img">
+                </div>
+                <div class="producto-nombre">Papas Fritas Saladas Grandes</div>
+                <div class="producto-precio">$45.00</div>
+                <div class="detalles-compra">
+                    <label>Cant:</label>
+                    <input type="number" class="producto-cantidad" value="1" min="1" max="20">
+                </div>
+                <a href="#" class="btn-pedido">
+                    <i class="fas fa-shopping-basket"></i> Pedir producto
+                </a>
+            </div>
+
+            <div class="producto-card">
+                <div class="img-container">
+                    <img src="https://images.unsplash.com/photo-1518047601542-79f18c655718?w=500" alt="Nachos" class="producto-img">
+                </div>
+                <div class="producto-nombre">Totopos de Maíz Queso</div>
+                <div class="producto-precio">$38.00</div>
+                <div class="detalles-compra">
+                    <label>Cant:</label>
+                    <input type="number" class="producto-cantidad" value="1" min="1" max="20">
+                </div>
+                <a href="#" class="btn-pedido">
+                    <i class="fas fa-shopping-basket"></i> Pedir producto
+                </a>
+            </div>
+
+            <div class="producto-card">
+                <div class="img-container">
+                    <img src="https://images.unsplash.com/photo-1534113414509-0eec2bfb493f?w=500" alt="Palomitas" class="producto-img">
+                </div>
+                <div class="producto-nombre">Palomitas Mantequilla</div>
+                <div class="producto-precio">$18.00</div>
+                <div class="detalles-compra">
+                    <label>Cant:</label>
+                    <input type="number" class="producto-cantidad" value="1" min="1" max="20">
+                </div>
+                <a href="#" class="btn-pedido">
+                    <i class="fas fa-shopping-basket"></i> Pedir producto
+                </a>
+            </div>
+
+            <div class="producto-card">
+                <div class="img-container">
+                    <img src="https://images.unsplash.com/photo-1600952841320-db92ec4047ca?w=500" alt="Cacahuates" class="producto-img">
+                </div>
+                <div class="producto-nombre">Cacahuates Enchilados 200g</div>
+                <div class="producto-precio">$22.00</div>
+                <div class="detalles-compra">
+                    <label>Cant:</label>
+                    <input type="number" class="producto-cantidad" value="1" min="1" max="20">
+                </div>
+                <a href="#" class="btn-pedido">
+                    <i class="fas fa-shopping-basket"></i> Pedir producto
+                </a>
+            </div>
+
+        </div> <!-- Cierre del grid de frituras -->
+
+    </div> <!-- Cierre del contenedor principal -->
+
+    <!-- ================= PARTE DE ABAJO (FEATURES & FOOTER) ================= -->
+    <div id="contacto" class="features-bar" style="margin-top: 4rem;">
+        <div class="features-container">
+            <div class="feature-item">
+                <div class="feature-icon"><i class="fas fa-headset"></i></div>
+                <div class="feature-text">
+                    <h4>Soporte Completo</h4>
+                    <p>Atención inmediata por WhatsApp</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <div class="footer-container">
+            <div class="footer-column">
+                <h3>Sobre EDMA</h3>
+                <p>Tu tiendita de confianza. Nos dedicamos a ofrecerte productos frescos, de abarrotes y despensa con la mejor atención de la zona.</p>
+            </div>
+           <div class="footer-column">
+    <h3>Categorías</h3>
+    <ul>
+        <li><a href="despensa.html">Lácteos y Despensa</a></li>
+        <li><a href="bebidas.html">Bebidas y Jugos</a></li>
+        <li><a href="frituras.html">Frituras y Snacks</a></li> <!-- Nuevo -->
+    </ul>
+</div>
+            <div class="footer-column">
+                <h3>Contacto</h3>
+                <div class="footer-contact-item">
+                    <i class="fas fa-map-marker-alt"></i>
+                    <span>Dirección conocida, García, Nuevo León.</span>
+                </div>
+                <div class="footer-contact-item">
+                    <i class="fas fa-phone-alt"></i>
+                    <span>+52 81 1175 2323</span>
+                </div>
+                <div class="footer-contact-item">
+                    <i class="fas fa-envelope"></i>
+                    <span>contacto@abarrotesedma.com</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="footer-bottom">
+            <p>&copy; 2026 Abarrotes EDMA. Todos los derechos reservados.</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
