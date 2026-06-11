@@ -1,3 +1,57 @@
+:root {
+    /* Modo Claro (Por defecto) */
+    --bg-principal: #f8f9fa;
+    --bg-tarjetas: white;
+    --bg-header: white;
+    --bg-oscuro-pulido: #1a252f;
+    --bg-gris-suave: #f8fafc;
+    
+    --texto-principal: #2c3e50;
+    --texto-secundario: #34495e;
+    --texto-mutado: #7f8c8d;
+    --texto-claro: #bdc3c7;
+    
+    --color-marca-naranja: #e67e22;
+    --color-marca-naranja-hover: #d35400;
+    --color-marca-verde: #2e7d32;
+    --color-marca-verde-hover: #1e8449;
+    
+    --borde-suave: #edf2f7;
+    --borde-input: #e2e8f0;
+    --sombra-suave: rgba(0,0,0,0.03);
+    --sombra-header: rgba(0,0,0,0.04);
+    
+    /* Gradiente del banner */
+    --gradiente-banner: linear-gradient(105deg, #e8f8f5 55%, #fef5e7 100%);
+}
+
+body.dark-mode {
+    /* Modo Oscuro (Se activa con JavaScript) */
+    --bg-principal: #121212;          /* Fondo general oscuro */
+    --bg-tarjetas: #1e1e1e;           /* Tarjetas gris oscuro */
+    --bg-header: #1e1e1e;            /* Header oscuro */
+    --bg-oscuro-pulido: #0a0f14;     /* Top bar y footer aún más oscuros */
+    --bg-gris-suave: #2a2a2a;        /* Contenedor de imágenes de productos */
+    
+    --texto-principal: #f5f6fa;      /* Texto casi blanco */
+    --texto-secundario: #dcdde1;    /* Texto secundario claro */
+    --texto-mutado: #a4b0be;         /* Gris legible en fondo oscuro */
+    --texto-claro: #bdc3c7;          
+    
+    /* Mantenemos los colores institucionales pero podemos ajustar su intensidad si es necesario */
+    --color-marca-naranja: #ff9f43;  /* Naranja ligeramente más brillante para contraste */
+    --color-marca-naranja-hover: #e67e22;
+    --color-marca-verde: #2ecc71;    /* Verde un poco más vivo para pantallas oscuras */
+    --color-marca-verde-hover: #27ae60;
+    
+    --borde-suave: #2d3748;          /* Bordes oscuros sutiles */
+    --borde-input: #4a5568;
+    --sombra-suave: rgba(0,0,0,0.2);
+    --sombra-header: rgba(0,0,0,0.4);
+    
+    --gradiente-banner: linear-gradient(105deg, #1e272e 55%, #2c3e50 100%);
+}
+
 /* ==========================================================================
    1. AJUSTES Y RESETS GENERALES
    ========================================================================== */
@@ -13,9 +67,10 @@ html {
 
 body {
     font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
-    background-color: #f4f6f8;
-    color: #2c3e50;
+    background-color: var(--bg-principal);
+    color: var(--texto-principal);
     line-height: 1.5;
+    transition: background-color 0.3s ease, color 0.3s ease; /* Transición suave al cambiar de modo */
 }
 
 a {
@@ -24,13 +79,13 @@ a {
 }
 
 /* ==========================================================================
-   2. CABECERA Y MENÚ (Reparación de la barra superior desacomodada)
+   2. CABECERA Y MENÚ
    ========================================================================== */
 
 /* Barra Superior del Horario */
 .top-bar {
-    background-color: #2c3e50;
-    color: #bdc3c7;
+    background-color: var(--bg-oscuro-pulido);
+    color: var(--texto-claro);
     font-size: 0.85rem;
     padding: 8px 1.5rem;
     display: flex;
@@ -39,106 +94,139 @@ a {
 }
 
 .top-bar-info i {
-    color: #e67e22;
+    color: var(--color-marca-naranja);
     margin-right: 5px;
 }
 
-/* Encabezado Principal Blanco */
+/* Encabezado Principal Blanco / Oscuro */
 .main-header {
-    background-color: white;
-    padding: 1rem 1.5rem;
+    background-color: var(--bg-header);
     display: flex;
     align-items: center;
     justify-content: space-between;
-    box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+    box-shadow: 0 2px 15px var(--sombra-header);
+    width: 100%;
+    padding: 15px 5%;
+    transition: background-color 0.3s ease;
+}
+
+.header-container {
+    display: flex;
+    width: 100%;
+    align-items: center;
+    justify-content: space-between;
+}
+
+/* Nuevo estilo para el contenedor del logo y nombre */
+.logo a {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    text-decoration: none;
 }
 
 .logo h1 {
-    font-size: 1.8rem;
+    font-size: 1.5rem;
     font-weight: 800;
-    color: #e67e22; /* Color naranja institucional */
-    display: flex;
-    align-items: center;
-    gap: 8px;
+    color: #e67e22; /* O tu variable --color-marca-naranja */
+    margin: 0;
 }
 
-/* Barra de búsqueda central */
-.search-box {
+/* Barra de búsqueda central optimizada */
+.main-header .search-box {
     display: flex;
     width: 45%;
     max-width: 500px;
+    margin: 0 30px;
+    border: 2px solid var(--borde-input);
+    border-radius: 50px;
+    overflow: hidden;
+    background-color: var(--bg-tarjetas);
+    transition: all 0.3s ease;
 }
 
-.search-box input {
+.main-header .search-box :focus-within {
+    border-color: var(--color-marca-verde);
+    box-shadow: 0 0 0 3px rgba(46, 125, 50, 0.1);
+}
+
+.main-header .search-box input {
     width: 100%;
-    padding: 10px 15px;
-    border: 2px solid #e2e8f0;
-    border-right: none;
-    border-radius: 8px 0 0 8px;
-    font-size: 0.9rem;
+    padding: 10px 20px;
+    border: none; 
     outline: none;
+    font-size: 0.9rem;
+    background-color: transparent;
+    color: var(--texto-principal);
 }
 
-.search-box button {
-    background-color: #e67e22;
+.main-header .search-box button {
+    background-color: var(--color-marca-naranja);
     color: white;
     border: none;
-    padding: 0 20px;
-    border-radius: 0 8px 8px 0;
+    padding: 0 22px;
     cursor: pointer;
     font-size: 1rem;
+    transition: background 0.3s;
 }
 
-/* Iconos de acciones rápidos (Corazón y Canasta) */
-.header-actions {
+.main-header .search-box button:hover {
+    background-color: var(--color-marca-naranja-hover);
+}
+
+/* Botón estilizado para el espacio vacío en el header */
+.btn-contacto-header {
+    background-color: var(--color-marca-verde);
+    color: white;
+    padding: 10px 20px;
+    border-radius: 50px;
+    font-size: 0.9rem;
+    font-weight: 600;
     display: flex;
     align-items: center;
-    gap: 20px;
+    gap: 6px;
+    transition: all 0.2s ease;
+    box-shadow: 0 4px 10px rgba(46, 125, 50, 0.15);
 }
 
-.action-item {
-    position: relative;
-    font-size: 1.3rem;
-    color: #34495e;
-    cursor: pointer;
+.btn-contacto-header:hover {
+    background-color: var(--color-marca-verde-hover);
+    transform: translateY(-1px);
 }
 
-.action-item .badge {
-    position: absolute;
-    top: -8px;
-    right: -10px;
-    background-color: #e67e22;
-    color: white;
-    font-size: 0.7rem;
-    font-weight: bold;
-    padding: 2px 6px;
-    border-radius: 50%;
-}
-
-/* Barra de Navegación Verde */
+/* Barra de Navegación */
 .navbar {
-    background-color: #27ae60; 
-    padding: 0.7rem 1.5rem;
+    background-color: var(--color-marca-verde); 
+    padding: 12px 5%;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.08);
 }
 
 .nav-links {
     display: flex;
-    gap: 25px;
+    gap: 10px;
+    max-width: 1200px;
+    margin: 0 auto;
 }
 
 .nav-links a {
-    color: white;
+    color: white; 
     font-weight: 600;
     font-size: 0.95rem;
-    transition: color 0.2s;
+    transition: all 0.2s ease;
+    padding: 6px 14px;
+    border-radius: 6px;
 }
 
-.nav-links a:hover {
-    color: #f1c40f;
+.nav-links a:hover,
+.nav-links a.active {
+    background-color: rgba(255, 255, 255, 0.15);
 }
 
 /* ==========================================================================
-   3. SÚPER BANNER DE BIENVENIDA (El que ya se ve genial)
+   3. SÚPER BANNER DE BIENVENIDA
    ========================================================================== */
 .container-banner {
     max-width: 1200px;
@@ -148,7 +236,7 @@ a {
 }
 
 .hero-banner {
-    background: linear-gradient(105deg, #e8f8f5 55%, #fef5e7 100%);
+    background: var(--gradiente-banner);
     border-radius: 24px;
     padding: 3rem 4rem;
     display: flex;
@@ -156,7 +244,8 @@ a {
     justify-content: space-between;
     gap: 3rem;
     overflow: hidden;
-    box-shadow: 0 10px 30px rgba(0,0,0,0.02);
+    box-shadow: var(--sombra-suave);
+    transition: background 0.3s ease;
 }
 
 .banner-content {
@@ -165,7 +254,7 @@ a {
 }
 
 .banner-tag {
-    color: #27ae60;
+    color: var(--color-marca-verde); 
     font-size: 0.9rem;
     font-weight: 700;
     text-transform: uppercase;
@@ -177,20 +266,20 @@ a {
 .banner-content h2 {
     font-size: 2.5rem;
     font-weight: 800;
-    color: #2c3e50;
+    color: var(--texto-principal);
     line-height: 1.2;
     margin-bottom: 1.2rem;
 }
 
 .banner-content p {
     font-size: 1.05rem;
-    color: #7f8c8d;
+    color: var(--texto-mutado);
     margin-bottom: 2rem;
     line-height: 1.6;
 }
 
 .banner-btn {
-    background-color: #27ae60;
+    background-color: var(--color-marca-verde);
     color: white;
     padding: 14px 30px;
     border-radius: 50px;
@@ -198,12 +287,12 @@ a {
     display: inline-flex;
     align-items: center;
     gap: 10px;
-    box-shadow: 0 6px 20px rgba(39, 174, 96, 0.25);
+    box-shadow: 0 6px 20px rgba(46, 125, 50, 0.25);
     transition: all 0.3s ease;
 }
 
 .banner-btn:hover {
-    background-color: #1e8449;
+    background-color: var(--color-marca-verde-hover);
     transform: translateY(-2px);
 }
 
@@ -224,7 +313,7 @@ a {
 }
 
 /* ==========================================================================
-   4. CUERPO DEL CATÁLOGO (Grid de Productos)
+   4. CUERPO DEL CATÁLOGO
    ========================================================================== */
 .container {
     max-width: 1200px;
@@ -232,15 +321,24 @@ a {
     padding: 3rem 1.5rem;
 }
 
+.categoria-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 1rem;
+    margin-bottom: 1.5rem;
+    border-bottom: 1px solid var(--borde-suave);
+    padding-bottom: 0.6rem;
+}
+
 .categoria-titulo {
     font-size: 1.5rem;
     font-weight: 700;
-    color: #2c3e50;
-    margin-top: 1rem;
-    margin-bottom: 1.5rem;
+    color: var(--texto-principal);
     display: flex;
     align-items: center;
     gap: 10px;
+    margin: 0;
 }
 
 .categoria-titulo::before {
@@ -248,8 +346,23 @@ a {
     display: inline-block;
     width: 5px;
     height: 24px;
-    background-color: #e67e22;
+    background-color: var(--color-marca-naranja);
     border-radius: 4px;
+}
+
+.ver-mas-link {
+    color: var(--color-marca-naranja);
+    font-weight: 700;
+    font-size: 0.95rem;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    transition: color 0.2s, transform 0.2s;
+}
+
+.ver-mas-link:hover {
+    color: var(--color-marca-naranja-hover);
+    transform: translateX(3px);
 }
 
 .grid-productos {
@@ -259,60 +372,99 @@ a {
 }
 
 .producto-card {
-    background-color: white;
-    border-radius: 12px;
-    box-shadow: 0 4px 15px rgba(0,0,0,0.03);
+    background-color: var(--bg-tarjetas);
+    border-radius: 16px;
+    box-shadow: 0 4px 15px var(--sombra-suave);
     overflow: hidden;
     padding: 1.25rem;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    border: 1px solid #edf2f7;
-    transition: all 0.3s ease;
+    border: 1px solid var(--borde-suave);
+    transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
 }
 
 .producto-card:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 12px 20px rgba(0,0,0,0.06);
+    transform: translateY(-6px);
+    box-shadow: 0 12px 22px rgba(0, 0, 0, 0.15);
+    border-color: rgba(46, 125, 50, 0.3);
 }
 
 .img-container {
     width: 100%;
     height: 160px;
-    background-color: #f8fafc;
-    border-radius: 8px;
+    background-color: var(--bg-gris-suave);
+    border-radius: 12px;
     display: flex;
     align-items: center;
     justify-content: center;
     margin-bottom: 1rem;
+    overflow: hidden;
 }
 
 .producto-img {
     max-width: 100%;
     max-height: 100%;
     object-fit: contain;
+    transition: transform 0.3s ease;
+}
+
+.producto-card:hover .producto-img {
+    transform: scale(1.04);
 }
 
 .producto-nombre {
-    font-size: 1.05rem;
+    font-size: 1.02rem;
     font-weight: 600;
-    color: #2c3e50;
-    margin-bottom: 0.5rem;
+    color: var(--texto-secundario);
+    margin-bottom: 0.6rem;
+    text-align: center;
 }
 
 .producto-precio {
-    color: #27ae60;
-    font-size: 1.3rem;
+    color: var(--color-marca-verde); 
+    font-size: 1.35rem;
     font-weight: 700;
     margin-bottom: 1rem;
     text-align: center;
 }
 
-.btn-pedido {
-    background-color: #e67e22;
-    color: white;
-    padding: 10px;
+.detalles-compra {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    margin-bottom: 14px;
+    font-weight: 600;
+    color: var(--texto-mutado);
+    background: var(--bg-principal);
+    padding: 6px;
     border-radius: 8px;
+}
+
+.detalles-compra input {
+    width: 55px;
+    padding: 4px;
+    border: 2px solid var(--borde-input);
+    border-radius: 6px;
+    text-align: center;
+    font-size: 0.95rem;
+    font-weight: bold;
+    color: var(--texto-principal);
+    background-color: var(--bg-tarjetas);
+    outline: none;
+    transition: border-color 0.2s;
+}
+
+.detalles-compra input:focus {
+    border-color: var(--color-marca-verde);
+}
+
+.btn-pedido {
+    background-color: var(--color-marca-naranja);
+    color: white;
+    padding: 11px;
+    border-radius: 10px;
     text-align: center;
     font-weight: 600;
     font-size: 0.9rem;
@@ -320,9 +472,16 @@ a {
     align-items: center;
     justify-content: center;
     gap: 8px;
+    transition: all 0.2s ease;
+    box-shadow: 0 4px 10px rgba(230, 126, 34, 0.15);
 }
 
-/* Botón Flotante de WhatsApp */
+.btn-pedido:hover {
+    background-color: var(--color-marca-naranja-hover);
+    box-shadow: 0 5px 15px rgba(230, 126, 34, 0.3);
+}
+
+/* Botonera Flotante (WhatsApp y Modo Oscuro) */
 .whatsapp-float {
     position: fixed;
     bottom: 30px;
@@ -336,16 +495,50 @@ a {
     align-items: center;
     justify-content: center;
     font-size: 30px;
-    box-shadow: 0 4px 15px rgba(37, 211, 102, 0.4);
+    box-shadow: 0 6px 20px rgba(37, 211, 102, 0.4);
     z-index: 100;
+    transition: transform 0.2s;
+}
+
+.whatsapp-float:hover {
+    transform: scale(1.08);
+}
+
+/* NUEVO: Botón Flotante Modo Oscuro */
+.darkmode-float {
+    position: fixed;
+    bottom: 105px; /* Posicionado justo arriba del de WhatsApp */
+    right: 30px;
+    background-color: #2c3e50;
+    color: #f1c40f;
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 24px;
+    box-shadow: 0 6px 20px rgba(0,0,0,0.15);
+    z-index: 100;
+    cursor: pointer;
+    transition: transform 0.2s, background-color 0.3s;
+}
+
+body.dark-mode .darkmode-float {
+    background-color: #f1c40f;
+    color: #2c3e50;
+}
+
+.darkmode-float:hover {
+    transform: scale(1.08);
 }
 
 /* ==========================================================================
    5. FOOTER Y COMODIDADES
    ========================================================================== */
 .features-bar {
-    background-color: white;
-    border-top: 1px solid #edf2f7;
+    background-color: var(--bg-tarjetas);
+    border-top: 1px solid var(--borde-suave);
     padding: 2rem 1.5rem;
     margin-top: 5rem;
 }
@@ -353,6 +546,9 @@ a {
 .features-container {
     max-width: 1200px;
     margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
 }
 
 .feature-item {
@@ -362,8 +558,8 @@ a {
 }
 
 .feature-icon {
-    background-color: #ebf5fb;
-    color: #27ae60;
+    background-color: var(--bg-principal);
+    color: var(--color-marca-verde);
     width: 50px;
     height: 50px;
     border-radius: 50%;
@@ -374,7 +570,7 @@ a {
 }
 
 footer {
-    background-color: #1a252f;
+    background-color: var(--bg-oscuro-pulido); 
     color: #ecf0f1;
     padding: 4rem 1.5rem 2rem 1.5rem;
 }
@@ -390,7 +586,7 @@ footer {
 
 .footer-column h3 {
     font-size: 1.15rem;
-    color: white;
+    color: var(--color-marca-naranja); 
     margin-bottom: 1.5rem;
 }
 
@@ -402,10 +598,20 @@ footer {
     margin-bottom: 10px;
 }
 
+.footer-column ul li a {
+    color: var(--texto-claro);
+    transition: color 0.2s;
+}
+
+.footer-column ul li a:hover {
+    color: white;
+}
+
 .footer-contact-item {
     display: flex;
     gap: 10px;
     margin-bottom: 12px;
+    color: var(--texto-claro);
 }
 
 .footer-bottom {
@@ -413,182 +619,77 @@ footer {
     padding-top: 1.5rem;
     text-align: center;
     font-size: 0.85rem;
-    color: #7f8c8d;
+    color: var(--texto-mutado);
 }
 
-/* Responsivo para Celulares */
-@media (max-width: 768px) {
-    .main-header {
-        flex-direction: column;
-        gap: 15px;
+/* ==========================================================================
+   6. RESPONSIVO PARA CELULARES
+   ========================================================================== */
+/* ==========================================================================
+   AJUSTES FINOS PARA EXPERIENCIA MÓVIL (Mobile App Feel)
+   ========================================================================== */
+@media (max-width: 480px) {
+    /* 1. Grid de productos compacto (2 columnas para aprovechar el ancho) */
+    .grid-productos {
+        grid-template-columns: 1fr 1fr;
+        gap: 12px;
+        padding: 0 10px;
     }
-    .search-box {
-        width: 100%;
+
+    /* 2. Tarjetas más ligeras en móvil */
+    .producto-card {
+        padding: 10px;
+        border-radius: 12px;
     }
+
+    .img-container {
+        height: 120px;
+        margin-bottom: 0.8rem;
+    }
+
+    .producto-nombre {
+        font-size: 0.9rem;
+        line-height: 1.2;
+        height: 2.4em; /* Mantiene altura fija para evitar saltos */
+        overflow: hidden;
+    }
+
+    .producto-precio {
+        font-size: 1.1rem;
+        margin-bottom: 0.8rem;
+    }
+
+    /* 3. Botón "Pedir" estilo Mobile (más grande y fácil de presionar) */
+    .btn-pedido {
+        padding: 12px;
+        font-size: 0.85rem;
+        border-radius: 8px;
+    }
+
+    /* 4. Ajuste del Banner para que no ocupe toda la pantalla */
     .hero-banner {
-        flex-direction: column-reverse;
-        padding: 2rem;
-        text-align: center;
+        padding: 1.5rem;
+        margin-bottom: 1rem;
     }
-    .banner-content {
-        max-width: 100%;
+    
+    .banner-content h2 {
+        font-size: 1.8rem;
     }
-    .banner-image {
-        max-width: 100%;
+
+    /* 5. Asegurar que los botones flotantes no tapen el contenido */
+    .whatsapp-float {
+        bottom: 15px;
+        right: 15px;
+        width: 50px;
+        height: 50px;
+        font-size: 22px;
     }
-}
-/* Estilos para el selector de cantidad */
-.detalles-compra {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 10px;
-    margin-bottom: 12px;
-    font-weight: 600;
-    color: #555;
-}
 
-.detalles-compra input {
-    width: 60px;
-    padding: 6px;
-    border: 2px solid #e2e8f0;
-    border-radius: 6px;
-    text-align: center;
-    font-size: 1rem;
-    font-weight: bold;
-    color: #2c3e50;
-    outline: none;
-}
-
-.detalles-compra input:focus {
-    border-color: #27ae60;
-}
-/* ==========================================================================
-   AJUSTES DE CABECERA Y ENLACE "VER MÁS"
-   ========================================================================== */
-
-/* Botón estilizado para el espacio vacío en el header */
-.btn-contacto-header {
-    background-color: #27ae60;
-    color: white;
-    padding: 8px 16px;
-    border-radius: 50px;
-    font-size: 0.9rem;
-    font-weight: 600;
-    display: flex;
-    align-items: center;
-    gap: 6px;
-    transition: background 0.2s;
-}
-
-.btn-contacto-header:hover {
-    background-color: #1e8449;
-}
-
-/* Alineación para el título de la categoría y el enlace */
-.categoria-header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin-top: 1rem;
-    margin-bottom: 1.5rem;
-    border-bottom: 1px solid #edf2f7;
-    padding-bottom: 0.5rem;
-}
-
-/* Reajuste del margen del título para que no se desfase */
-.categoria-header .categoria-titulo {
-    margin: 0;
-}
-
-/* Estilo elegante para el enlace "Ver más" */
-.ver-mas-link {
-    color: #e67e22; /* Color naranja combinando con tus botones */
-    font-weight: 700;
-    font-size: 0.95rem;
-    display: flex;
-    align-items: center;
-    gap: 5px;
-    transition: color 0.2s, transform 0.2s;
-}
-
-.ver-mas-link:hover {
-    color: #d35400;
-    transform: translateX(3px); /* Hace un pequeño efecto de empuje al pasar el mouse */
-}
-/* Forzar a que la barra de búsqueda tenga un tamaño óptimo en la cabecera */
-.main-header .search-box {
-    display: flex;
-    flex: 1;
-    max-width: 500px; /* Evita que se estire demasiado */
-    margin: 0 20px;   /* Le da separación con el logo y el botón */
-}
-
-.main-header .search-box input {
-    width: 100%;      /* Hace que el cuadro blanco ocupe todo el espacio disponible */
-    padding: 10px 15px;
-}
-/* ==========================================================================
-   PARCHES DE AJUSTE PARA LA PÁGINA DE DESPENSA
-   ========================================================================== */
-
-/* 1. Forzar a que la cabecera sea un contenedor flexible y alinee todo en una fila */
-.main-header {
-    display: flex !important;
-    align-items: center !important;
-    justify-content: space-between !important;
-    padding: 10px 5%;
-    background-color: #fff;
-}
-
-/* 2. Estirar la barra de búsqueda para que no se vea chiquita */
-.main-header .search-box {
-    display: flex !important;
-    flex: 1 !important;
-    max-width: 500px !important; /* Evita que se deforme en pantallas gigantes */
-    margin: 0 30px !important;   /* Le da bonita separación con el logo y el botón */
-}
-
-/* Asegurar que el input ocupe todo el ancho de su caja */
-.main-header .search-box input {
-    width: 100% !important;
-    padding: 10px 15px !important;
-    border: 1px solid #ddd !important;
-    border-radius: 4px 0 0 4px !important;
-}
-
-/* 3. Reparar los colores del menú verde para que resalten */
-.navbar {
-    background-color: #27ae60 !important; /* Tu color verde base */
-    padding: 12px 5% !important;
-}
-
-.navbar .nav-links a {
-    color: white !important; /* Letras blancas para que contrasten */
-    text-decoration: none !important;
-    margin-right: 20px !important;
-    font-weight: 600 !important;
-}
-
-.navbar .nav-links a:hover, 
-.navbar .nav-links a.active {
-    color: #f1c40f !important; /* Toque amarillo al pasar el mouse o estar activo */
-}
-/* Asegura la alineación horizontal con el botón de WhatsApp actual */
-.main-header {
-    width: 100% !important;
-}
-
-.header-container {
-    display: flex !important;
-    width: 100% !important;
-    align-items: center !important;
-    justify-content: space-between !important;
-}
-
-/* Fuerza al buscador a expandirse al 45% sin importar los elementos colindantes */
-.main-header .search-box {
-    display: flex !important;
-    width: 45% !important;
-    max-width: 500px !important;
+    .darkmode-float {
+        bottom: 75px;
+        right: 15px;
+        width: 50px;
+        height: 50px;
+        font-size: 20px;
+    }
 }
