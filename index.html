@@ -3,12 +3,14 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Catálogo - Abarrotes EDMA </title>
+    <title>Catálogo - Abarrotes EDMA</title>
     <!-- Cargamos iconos modernos de FontAwesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <!-- Enlace al archivo de estilos externo -->
     <link rel="stylesheet" href="estilos.css">
 </head>
+
+
 <body>
 
     <!-- ================= PARTE DE ARRIBA ================= -->
@@ -19,10 +21,12 @@
     </div>
 
     <header class="main-header">
-        <div class="logo">
-            <h1><i class="fas fa-store"></i> EDMA</h1>
-        </div>
-        
+       <div class="logo">
+    <a href="index.html" style="display: flex; align-items: center; gap: 10px;">
+        <img src="logo.png" alt="Abarrotes EDMA" style="height: 60px; width: auto;">
+        <h1 style="margin: 0; font-size: 1.5rem; color: #e67e22;">EDMA</h1>
+    </a>
+</div>
         <!-- Barra de búsqueda -->
         <div class="search-box">
             <input type="text" placeholder="Buscar productos en la tiendita...">
@@ -37,6 +41,8 @@
             <a href="#contacto">Contacto</a>
         </div>
     </nav>
+    <div class="darkmode-float" id="btn-darkmode">
+    <i class="fas fa-moon"></i> </div>
 
     <!-- Botón Flotante Global de WhatsApp -->
     <a href="https://wa.me/8111752323?text=Hola,%20quiero%20hacer%20un%20pedido." class="whatsapp-float" target="_blank">
@@ -287,7 +293,7 @@
         <li><a href="bebidas.html">Bebidas y Jugos</a></li>
         <li><a href="frituras.html">Frituras y Snacks</a></li> <!-- Nuevo -->
     </ul>
-</div>
+</div>  
             <div class="footer-column">
                 <h3>Contacto</h3>
                 <div class="footer-contact-item">
