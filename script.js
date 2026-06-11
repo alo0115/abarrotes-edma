@@ -1,7 +1,31 @@
 document.addEventListener('DOMContentLoaded', function() {
     
     // ==========================================================================
-    // 1. LÓGICA DEL BUSCADOR
+    // 1. LÓGICA DEL MODO OSCURO (DARK MODE)
+    // ==========================================================================
+    const btnDarkMode = document.getElementById('btn-darkmode');
+
+    // Verificar si el usuario ya tenía activado el modo oscuro antes
+    if (localStorage.getItem('theme') === 'dark') {
+        document.body.classList.add('dark-mode');
+    }
+
+    // Escuchar el clic en el botón de modo oscuro
+    if (btnDarkMode) {
+        btnDarkMode.addEventListener('click', () => {
+            document.body.classList.toggle('dark-mode');
+
+            // Guardar la elección del usuario en el almacenamiento local
+            if (document.body.classList.contains('dark-mode')) {
+                localStorage.setItem('theme', 'dark');
+            } else {
+                localStorage.setItem('theme', 'light');
+            }
+        });
+    }
+
+    // ==========================================================================
+    // 2. LÓGICA DEL BUSCADOR
     // ==========================================================================
     const inputBusqueda = document.querySelector('.search-box input');
     const botonBusqueda = document.querySelector('.search-box button');
@@ -28,7 +52,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
 
     // ==========================================================================
-    // 2. LÓGICA DE CANTIDADES Y WHATSAPP AUTOMÁTICO
+    // 3. LÓGICA DE CANTIDADES Y WHATSAPP AUTOMÁTICO
     // ==========================================================================
     const telefonoTienda = "528111752323"; // Tu número de WhatsApp con código de país
 
